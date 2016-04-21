@@ -55,24 +55,28 @@ Run `carthage update` to build the framework and drag the built `MMSegmentSlider
 
 ### Manually
 
-* Drag the `MMSegmentSlider/MMSegmentSlider` folder into your project.
+* Drag the `MMSegmentSlider` folder into your project.
 * Enjoy it
 
 ## Usage
 
 (see sample Xcode project in `/demo`)
 
-`MMSegmentSlider` is completely **IBInspectable** and **IBDesignable**. That means you can customise it right from the Interface Build and see the changes in the real time.
+`MMSegmentSlider` is completely **IBDesignable** and **IBInspectable**. This means you can customise it right in the Interface Builder and see the changes immediately.
 
 ![MMSegmentSlider](readme-assets/slider-demo-inspectable.gif)
 
 ### Interface Builder
 
-The simplest way to use MMSegmentSlider is drag & drop the empty view in the Interface Builder and its class to MMSegmentSlider. Then you can customise the appearance right from the attributes inspector.
+The simplest way to use MMSegmentSlider is to add an empty view and set the class to MMSegmentSlider. Then you can customise its appearance right in the Attribute Inspector.
+Though you should note that the font for labels can only be customised from the code:
+```objective-c
+segmentSlider.labelsFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f];
+```
 
 ### Using the code
 
-You can use the following properties to change the look of the slider:
+You can also instantiate MMSegmentSlider like any other UIControl right from the code and use the following properties to change the look of the slider:
 
 ```objective-c
 @property (nonatomic, strong) UIColor *basicColor;
@@ -84,26 +88,24 @@ You can use the following properties to change the look of the slider:
 @property (nonatomic, strong) UIFont *labelsFont;
 ```
 
-Note that font for labels can only be customised from the code:
-```objective-c
-segmentSlider.labelsFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f];
-```
-
-### Values
+### Values and labels
 
 To set values for items use:
 ```objective-c
 segmentSlider.values = @[@"$19", @"$99", @"$199", @"$299"];
 ```
-This values will not be visible and will only be returned when you get current value:
+
+This values are not visible and will only be returned when you retrieve the selected value:
 ```objective-c
 priceLabel.text = (NSString *)segmentSlider.currentValue;
 ```
-To set labels for the items use:
+
+To set labels for these values use:
 ```objective-c
 segmentSlider.labels = @[@"1 month", @"6 months", @"1 year", @"2 years"];
 ```
-You can also get the index of the current value using the following property:
+
+You can also get the index of the selected item using the following property:
 ```objective-c
 @property (nonatomic) NSInteger selectedItemIndex;
 ```
