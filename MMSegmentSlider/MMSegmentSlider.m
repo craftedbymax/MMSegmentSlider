@@ -244,8 +244,8 @@
     CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - k_BOTTOM_OFFSET;
     
     NSInteger approximateIndex = round((point.x - startPointX) / intervalSize);
-    CGFloat xAccuracy = fabsf(point.x - (startPointX + approximateIndex * intervalSize));
-    CGFloat yAccuracy = fabsf(yPos - point.y);
+    CGFloat xAccuracy = fabs(point.x - (startPointX + approximateIndex * intervalSize));
+    CGFloat yAccuracy = fabs(yPos - point.y);
     
     if (xAccuracy > self.circlesRadius * 2.4f || yAccuracy > self.bounds.size.height * 0.8f) {
         return -1;

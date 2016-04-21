@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E54BE3FF1CC90EFF00C33FE1 /* MMSegmentSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = E54BE3FD1CC90EFF00C33FE1 /* MMSegmentSlider.h */; };
 		E54BE4001CC90EFF00C33FE1 /* MMSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E54BE3FE1CC90EFF00C33FE1 /* MMSegmentSlider.m */; };
+		E54BE4081CC9125700C33FE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54BE4071CC9125700C33FE1 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		E54BE3F71CC90EE900C33FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E54BE3FD1CC90EFF00C33FE1 /* MMSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSegmentSlider.h; sourceTree = "<group>"; };
 		E54BE3FE1CC90EFF00C33FE1 /* MMSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSegmentSlider.m; sourceTree = "<group>"; };
+		E54BE4071CC9125700C33FE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54BE4081CC9125700C33FE1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +37,7 @@
 			children = (
 				E54BE3F41CC90EE900C33FE1 /* MMSegmentSlider */,
 				E54BE3F31CC90EE900C33FE1 /* Products */,
+				E54BE4071CC9125700C33FE1 /* UIKit.framework */,
 			);
 			sourceTree = "<group>";
 		};

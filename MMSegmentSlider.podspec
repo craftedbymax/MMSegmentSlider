@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.authors  = { 'Max Medvedev' =>
                  'maxmedvedev@me.com' }
   s.social_media_url = "https://twitter.com/max_medvedev"
-  s.source   = { :git => 'https://github.com/MedvedevMax/MMSegmentSlider.git', :tag => '1.0.0' }
+  s.source   = { :git => 'https://github.com/MedvedevMax/MMSegmentSlider.git', :tag => s.version.to_s }
   s.source_files = 'MMSegmentSlider'
 end

@@ -2,7 +2,7 @@
  *  Segmented slider
  */
 
-@import UIKit;
+#import "UIKit/UIKit.h"
 
 IB_DESIGNABLE
 @interface MMSegmentSlider : UIControl
