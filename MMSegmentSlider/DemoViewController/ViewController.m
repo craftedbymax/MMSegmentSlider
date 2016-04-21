@@ -1,14 +1,10 @@
-//
-//  ViewController.m
-//  MMSegmentSlider
-//
-//  Created by Medvedev on 21/04/16.
-//  Copyright © 2016 medvedev. All rights reserved.
-//
-
 #import "ViewController.h"
+#import "MMSegmentSlider.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet MMSegmentSlider *segmentSlider;
+@property (weak, nonatomic) IBOutlet UILabel *valueIndicator;
 
 @end
 
