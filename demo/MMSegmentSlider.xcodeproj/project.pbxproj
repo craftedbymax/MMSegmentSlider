@@ -13,7 +13,7 @@
 		E54BE3D71CC8D0D900C33FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54BE3D51CC8D0D900C33FE1 /* Main.storyboard */; };
 		E54BE3D91CC8D0D900C33FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54BE3D81CC8D0D900C33FE1 /* Assets.xcassets */; };
 		E54BE3DC1CC8D0D900C33FE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54BE3DA1CC8D0D900C33FE1 /* LaunchScreen.storyboard */; };
-		E54BE4061CC90FCA00C33FE1 /* MMSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E54BE4051CC90FCA00C33FE1 /* MMSegmentSlider.m */; };
+		E54BE40F1CC91DEA00C33FE1 /* MMSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E54BE40E1CC91DEA00C33FE1 /* MMSegmentSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		E54BE3D81CC8D0D900C33FE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E54BE3DB1CC8D0D900C33FE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54BE3DD1CC8D0D900C33FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E54BE4041CC90FCA00C33FE1 /* MMSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMSegmentSlider.h; path = ../../../MMSegmentSlider/MMSegmentSlider.h; sourceTree = "<group>"; };
-		E54BE4051CC90FCA00C33FE1 /* MMSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMSegmentSlider.m; path = ../../../MMSegmentSlider/MMSegmentSlider.m; sourceTree = "<group>"; };
+		E54BE40D1CC91DEA00C33FE1 /* MMSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMSegmentSlider.h; path = ../../MMSegmentSlider/MMSegmentSlider.h; sourceTree = "<group>"; };
+		E54BE40E1CC91DEA00C33FE1 /* MMSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMSegmentSlider.m; path = ../../MMSegmentSlider/MMSegmentSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		E54BE3CB1CC8D0D900C33FE1 /* MMSegmentSlider */ = {
 			isa = PBXGroup;
 			children = (
-				E54BE3E31CC8D9C900C33FE1 /* SegmentSlider */,
+				E54BE40C1CC91DDF00C33FE1 /* SegmentSlider */,
 				E54BE3E71CC9028B00C33FE1 /* DemoViewController */,
 				E54BE3CC1CC8D0D900C33FE1 /* Supporting Files */,
 				E54BE3DA1CC8D0D900C33FE1 /* LaunchScreen.storyboard */,
@@ -82,15 +82,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E54BE3E31CC8D9C900C33FE1 /* SegmentSlider */ = {
-			isa = PBXGroup;
-			children = (
-				E54BE4041CC90FCA00C33FE1 /* MMSegmentSlider.h */,
-				E54BE4051CC90FCA00C33FE1 /* MMSegmentSlider.m */,
-			);
-			path = SegmentSlider;
-			sourceTree = "<group>";
-		};
 		E54BE3E71CC9028B00C33FE1 /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +89,15 @@
 				E54BE3D31CC8D0D900C33FE1 /* ViewController.m */,
 			);
 			path = DemoViewController;
+			sourceTree = "<group>";
+		};
+		E54BE40C1CC91DDF00C33FE1 /* SegmentSlider */ = {
+			isa = PBXGroup;
+			children = (
+				E54BE40D1CC91DEA00C33FE1 /* MMSegmentSlider.h */,
+				E54BE40E1CC91DEA00C33FE1 /* MMSegmentSlider.m */,
+			);
+			name = SegmentSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54BE4061CC90FCA00C33FE1 /* MMSegmentSlider.m in Sources */,
+				E54BE40F1CC91DEA00C33FE1 /* MMSegmentSlider.m in Sources */,
 				E54BE3D41CC8D0D900C33FE1 /* ViewController.m in Sources */,
 				E54BE3D11CC8D0D900C33FE1 /* AppDelegate.m in Sources */,
 				E54BE3CE1CC8D0D900C33FE1 /* main.m in Sources */,
