@@ -75,6 +75,10 @@
         _selectedLabelColor = [UIColor blackColor];
     }
     
+    if (!_labelColor) {
+        _labelColor = [UIColor grayColor];
+    }
+    
     if (!_values) {
         _selectedItemIndex = 0;
         _values = @[@0, @1, @2];
@@ -126,8 +130,8 @@
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     pathAnimation.fromValue = (__bridge id) oldPath;
     pathAnimation.toValue = (__bridge id) newPath;
-    pathAnimation.duration = 0.15f;
-    pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    pathAnimation.duration = 0.25f;
+    pathAnimation.timingFunction = [CAMediaTimingFunction functionWithControlPoints:0.20 :1.00 :0.70 :1.00];
 
     [CATransaction setCompletionBlock:^{
         self.selectedLayer.path = [[self pathForSelected] CGPath];

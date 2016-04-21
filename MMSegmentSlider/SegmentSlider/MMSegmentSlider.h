@@ -10,27 +10,27 @@ IB_DESIGNABLE
 /**
  * Basic slider color
  */
-IBInspectable @property (nonatomic, strong) UIColor *basicColor;
+@property (nonatomic, strong) IBInspectable UIColor *basicColor;
 
 /**
  *  Basic labels color
  */
-IBInspectable @property (nonatomic, strong) UIColor *labelColor;
+@property (nonatomic, strong) IBInspectable UIColor *labelColor;
 
 /**
  * Selected value color
  */
-IBInspectable @property (nonatomic, strong) UIColor *selectedValueColor;
+@property (nonatomic, strong) IBInspectable UIColor *selectedValueColor;
 
 /**
  * Color of selected label
  */
-IBInspectable @property (nonatomic, strong) UIColor *selectedLabelColor;
+@property (nonatomic, strong) IBInspectable UIColor *selectedLabelColor;
 
 /**
  * Circles radius
  */
-IBInspectable @property (nonatomic) NSInteger circlesRadius;
+@property (nonatomic) IBInspectable NSInteger circlesRadius;
 
 /**
  * Contains NSNumber values
