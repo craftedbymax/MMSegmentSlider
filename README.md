@@ -2,11 +2,10 @@
 
 [![Pod Platform](https://img.shields.io/cocoapods/p/MMSegmentSlider.svg?style=flat)](https://cocoapods.org/pods/MMSegmentSlider)
 [![Pod License](https://img.shields.io/cocoapods/l/MMSegmentSlider.svg?style=flat)](https://github.com/MedvedevMax/MMSegmentSlider/blob/master/LICENSE)
-
 [![Pod Version](https://img.shields.io/cocoapods/v/MMSegmentSlider.svg?style=flat)](https://cocoapods.org/pods/MMSegmentSlider)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-`MMSegmentSlider` is an easy-to-use animated slider for iOS 7+ written in Objective-C.
+`MMSegmentSlider` is an easy-to-use IBDesignable animated slider for iOS 7+ written in Objective-C.
 
 ![MMSegmentSlider](readme-assets/slider-demo.gif)
 
@@ -63,13 +62,13 @@ Run `carthage update` to build the framework and drag the built `MMSegmentSlider
 
 (see sample Xcode project in `/demo`)
 
-`MMSegmentSlider` is completely IBInspectable and IBDesignable. That means you can customise it right from the Interface Build and see the changes in the real time.
+`MMSegmentSlider` is completely **IBInspectable** and **IBDesignable**. That means you can customise it right from the Interface Build and see the changes in the real time.
 
 ![MMSegmentSlider](readme-assets/slider-demo-inspectable.gif)
 
 ### Interface Builder
 
-So the simplest way to use MMSegmentSlider is drag & drop the empty view in the Interface Builder and its class to MMSegmentSlider. Then you can customise the appearance right from the attributes inspector.
+The simplest way to use MMSegmentSlider is drag & drop the empty view in the Interface Builder and its class to MMSegmentSlider. Then you can customise the appearance right from the attributes inspector.
 
 ### Using the code
 
