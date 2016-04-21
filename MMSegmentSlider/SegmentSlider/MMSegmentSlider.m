@@ -126,18 +126,13 @@
     CGPathRef oldPath = self.selectedLayer.path;
     CGPathRef newPath = [[self pathForSelected] CGPath];
     
-    [CATransaction begin];
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     pathAnimation.fromValue = (__bridge id) oldPath;
     pathAnimation.toValue = (__bridge id) newPath;
     pathAnimation.duration = 0.25f;
     pathAnimation.timingFunction = [CAMediaTimingFunction functionWithControlPoints:0.20 :1.00 :0.70 :1.00];
 
-    [CATransaction setCompletionBlock:^{
-        self.selectedLayer.path = [[self pathForSelected] CGPath];
-    }];
-    [CATransaction commit];
-
+    self.selectedLayer.path = newPath;
     [self.selectedLayer addAnimation:pathAnimation forKey:@"PathAnimation"];
 }
 

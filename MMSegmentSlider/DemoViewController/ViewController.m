@@ -4,18 +4,32 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet MMSegmentSlider *segmentSlider;
-@property (weak, nonatomic) IBOutlet UILabel *valueIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    self.segmentSlider.values = @[@"$19", @"$99", @"$199", @"$299"];
+    self.segmentSlider.labels = @[@"1 month", @"6 months", @"1 year", @"2 years"];
+    self.segmentSlider.labelsFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:13.0f];
+    
+    [self.segmentSlider addTarget:self action:@selector(sliderValueChanged) forControlEvents:UIControlEventValueChanged];
+    [self updatePriceLabel];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)sliderValueChanged
+{
+    [self updatePriceLabel];
+}
+
+- (void)updatePriceLabel
+{
+    self.priceLabel.text = (NSString *)self.segmentSlider.currentValue;
 }
 
 @end

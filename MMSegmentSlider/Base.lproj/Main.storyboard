@@ -53,8 +53,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="priceLabel" destination="04G-Bh-sUb" id="VBx-td-lIa"/>
                         <outlet property="segmentSlider" destination="jfv-uU-sMl" id="hLC-hA-OBO"/>
-                        <outlet property="valueIndicator" destination="04G-Bh-sUb" id="UlC-uY-OyR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

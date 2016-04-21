@@ -33,6 +33,11 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable NSInteger circlesRadius;
 
 /**
+ * Font for labels
+ */
+@property (nonatomic, strong) UIFont *labelsFont;
+
+/**
  * Contains NSNumber values
  */
 @property (nonatomic, strong) NSArray *values;
@@ -42,10 +47,6 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong) NSArray *labels;
 
-/**
- * Font for labels
- */
-@property (nonatomic, strong) UIFont *labelsFont;
 
 /**
  * Set/get current selected value
