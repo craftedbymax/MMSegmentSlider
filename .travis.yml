@@ -1,2 +1,11 @@
 language: objective-c
-script: xctool -project demo/MMSegmentSlider.xcodeproj -scheme MMSegmentSlider build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator
+branches:
+  only:
+    - master
+xcode_project: MMSegmentSlider.xcodeproj
+xcode_scheme: MMSegmentSlider
+osx_image: xcode7.3
+xcode_sdk: iphonesimulator9.3
+
+script:
+    - xctool -project demo/MMSegmentSlider.xcodeproj -scheme MMSegmentSlider build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator
