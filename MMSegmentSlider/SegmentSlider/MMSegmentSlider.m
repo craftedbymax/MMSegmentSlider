@@ -1,7 +1,6 @@
 #import "MMSegmentSlider.h"
 
 #define k_H_INSETS 15.0f
-#define k_V_TEXT_OFFSET 30.0f
 #define k_BOTTOM_OFFSET 15.0f
 
 @interface MMSegmentSlider ()
@@ -63,35 +62,19 @@
 
 - (void)setupProperties
 {
-    if (!_basicColor) {
-        _basicColor = [UIColor colorWithWhite:0.7f alpha:1.0f];
-    }
+    _basicColor = [UIColor colorWithWhite:0.7f alpha:1.0f];
+    _selectedValueColor = [UIColor blackColor];
+    _selectedLabelColor = [UIColor blackColor];
+    _labelColor = [UIColor grayColor];
     
-    if (!_selectedValueColor) {
-        _selectedValueColor = [UIColor blackColor];
-    }
+    _textOffset = 30.0f;
+    _circlesRadius = 15.0f;
     
-    if (!_selectedLabelColor) {
-        _selectedLabelColor = [UIColor blackColor];
-    }
+    _selectedItemIndex = 0;
+    _values = @[@0, @1, @2];
+    _labels = @[@"item 0", @"item 1", @"item 2"];
     
-    if (!_labelColor) {
-        _labelColor = [UIColor grayColor];
-    }
-    
-    if (!_values) {
-        _selectedItemIndex = 0;
-        _values = @[@0, @1, @2];
-        _labels = @[@"item 0", @"item 1", @"item 2"];
-    }
-    
-    if (!_circlesRadius) {
-        _circlesRadius = 15.0f;
-    }
-    
-    if (!_labelsFont) {
-        _labelsFont = [UIFont fontWithName:@"Helvetica-Light" size:16.0f];
-    }
+    _labelsFont = [UIFont fontWithName:@"Helvetica-Light" size:16.0f];
 }
 
 #pragma mark - Shape Layers
@@ -206,7 +189,7 @@
         UIColor *textColor = self.selectedItemIndex == i ? self.selectedLabelColor : self.labelColor;
         
         [self drawLabel:[self.labels objectAtIndex:i]
-                atPoint:CGPointMake(startPointX + i * intervalSize, yPos - self.circlesRadius - k_V_TEXT_OFFSET)
+                atPoint:CGPointMake(startPointX + i * intervalSize, yPos - self.circlesRadius - self.textOffset)
               withColor:textColor];
     }
 }

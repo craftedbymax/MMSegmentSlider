@@ -33,6 +33,11 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable NSInteger circlesRadius;
 
 /**
+ * Text offset from the circle
+ */
+@property (nonatomic) IBInspectable NSInteger textOffset;
+
+/**
  * Font for labels
  */
 @property (nonatomic, strong) UIFont *labelsFont;
