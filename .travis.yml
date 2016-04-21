@@ -1,0 +1,2 @@
+language: objective-c
+script: xctool -workspace demo/MMSegmentSlider -scheme MMSegmentSlider build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator
