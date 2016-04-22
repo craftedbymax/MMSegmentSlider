@@ -30,12 +30,12 @@ IB_DESIGNABLE
 /**
  * Circles radius
  */
-@property (nonatomic) IBInspectable NSInteger circlesRadius;
+@property (nonatomic) IBInspectable CGFloat circlesRadius;
 
 /**
  * Text offset from the circle
  */
-@property (nonatomic) IBInspectable NSInteger textOffset;
+@property (nonatomic) IBInspectable CGFloat textOffset;
 
 /**
  * Font for labels
