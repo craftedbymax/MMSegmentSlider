@@ -1,7 +1,7 @@
 #import "MMSegmentSlider.h"
 
-#define k_H_INSETS 15.0f
-#define k_BOTTOM_OFFSET 15.0f
+static CGFloat const HorizontalInsets = 15.0f;
+static CGFloat const BottomOffset = 15.0f;
 
 @interface MMSegmentSlider ()
 
@@ -120,25 +120,25 @@
     [self.selectedLayer addAnimation:pathAnimation forKey:@"PathAnimation"];
 }
 
-- (UIBezierPath*)pathForSlider
+- (UIBezierPath *)pathForSlider
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
     
-    CGFloat lineY = self.bounds.size.height - self.circlesRadius - k_BOTTOM_OFFSET;
-    [path moveToPoint:CGPointMake(self.circlesRadius + k_H_INSETS, lineY)];
-    [path addLineToPoint:CGPointMake(self.bounds.size.width - self.circlesRadius - k_H_INSETS, lineY)];
+    CGFloat lineY = self.bounds.size.height - self.circlesRadius - BottomOffset;
+    [path moveToPoint:CGPointMake(self.circlesRadius + HorizontalInsets, lineY)];
+    [path addLineToPoint:CGPointMake(self.bounds.size.width - self.circlesRadius - HorizontalInsets, lineY)];
     [path closePath];
     
     return path;
 }
 
-- (UIBezierPath*)pathForCircles
+- (UIBezierPath *)pathForCircles
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
     
-    CGFloat startPointX = self.circlesRadius + k_H_INSETS;
-    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + k_H_INSETS) * 2.0) / (self.values.count - 1);
-    CGFloat yPos = self.bounds.size.height - self.circlesRadius - k_BOTTOM_OFFSET;
+    CGFloat startPointX = self.circlesRadius + HorizontalInsets;
+    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + HorizontalInsets) * 2.0) / (self.values.count - 1);
+    CGFloat yPos = self.bounds.size.height - self.circlesRadius - BottomOffset;
     
     for (int i = 0; i < self.values.count; i++) {
         CGPoint center = CGPointMake(startPointX + i * intervalSize, yPos);
@@ -153,13 +153,13 @@
     return path;
 }
 
-- (UIBezierPath*)pathForSelected
+- (UIBezierPath *)pathForSelected
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
 
-    CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + k_H_INSETS;
-    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + k_H_INSETS) * 2.0) / (self.values.count - 1);
-    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - k_BOTTOM_OFFSET;
+    CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + HorizontalInsets;
+    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + HorizontalInsets) * 2.0) / (self.values.count - 1);
+    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - BottomOffset;
     
     CGPoint center = CGPointMake(startPointX + self.selectedItemIndex * intervalSize, yPos);
     [path addArcWithCenter:center
@@ -181,10 +181,10 @@
 
 - (void)drawLabels
 {
-    CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + k_H_INSETS;
-    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + k_H_INSETS) * 2.0) / (self.values.count - 1);
+    CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + HorizontalInsets;
+    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + HorizontalInsets) * 2.0) / (self.values.count - 1);
     
-    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - k_BOTTOM_OFFSET;
+    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - BottomOffset;
     
     for (int i = 0; i < self.values.count; i++) {
         UIColor *textColor = self.selectedItemIndex == i ? self.selectedLabelColor : self.labelColor;
@@ -240,9 +240,9 @@
 
 - (NSInteger)indexForTouchPoint:(CGPoint)point
 {
-    CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + k_H_INSETS;
-    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + k_H_INSETS) * 2.0) / (self.values.count - 1);
-    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - k_BOTTOM_OFFSET;
+    CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + HorizontalInsets;
+    CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + HorizontalInsets) * 2.0) / (self.values.count - 1);
+    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - BottomOffset;
     
     NSInteger approximateIndex = round((point.x - startPointX) / intervalSize);
     CGFloat xAccuracy = fabs(point.x - (startPointX + approximateIndex * intervalSize));
@@ -279,6 +279,7 @@
     if (animated) {
         [self animateSelectionChange];
     }
+    
     [self setNeedsDisplay];
 }
 
