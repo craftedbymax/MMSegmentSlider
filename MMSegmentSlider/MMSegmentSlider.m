@@ -263,12 +263,14 @@ static CGFloat const BottomOffset = 15.0f;
     self.selectedItemIndex = 0;
 
     [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setSelectedItemIndex:(NSInteger)selectedItemIndex
 {
     _selectedItemIndex = selectedItemIndex;
     
+    [self updateLayers];
     [self setNeedsDisplay];
 }
 
@@ -278,6 +280,9 @@ static CGFloat const BottomOffset = 15.0f;
     
     if (animated) {
         [self animateSelectionChange];
+    }
+    else {
+        [self updateLayers];
     }
     
     [self setNeedsDisplay];
