@@ -1,6 +1,6 @@
 #import "MMSegmentSlider.h"
 
-static CGFloat const HorizontalInsets = 15.0f;
+static CGFloat const HorizontalInsets = 45.0f;
 static CGFloat const BottomOffset = 15.0f;
 
 @interface MMSegmentSlider ()
@@ -59,6 +59,7 @@ static CGFloat const BottomOffset = 15.0f;
 - (void)layoutSubviews
 {
     [self updateLayers];
+    [self setNeedsDisplay];
 }
 
 - (void)setupProperties
@@ -69,7 +70,8 @@ static CGFloat const BottomOffset = 15.0f;
     _labelColor = [UIColor grayColor];
     
     _textOffset = 30.0f;
-    _circlesRadius = 15.0f;
+    _circlesRadius = 12.0f;
+    _circlesRadiusForSelected = 26.0f;
     
     _selectedItemIndex = 0;
     _values = @[@0, @1, @2];
@@ -160,15 +162,15 @@ static CGFloat const BottomOffset = 15.0f;
     CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + HorizontalInsets;
     CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + HorizontalInsets) * 2.0) / (self.values.count - 1);
     CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - BottomOffset;
-    
     CGPoint center = CGPointMake(startPointX + self.selectedItemIndex * intervalSize, yPos);
+
     [path addArcWithCenter:center
-                    radius:self.circlesRadius
+                    radius:self.circlesRadiusForSelected
                 startAngle:0
                   endAngle:2 * M_PI
                  clockwise:YES];
     [path closePath];
-    
+
     return path;
 }
 
@@ -184,7 +186,7 @@ static CGFloat const BottomOffset = 15.0f;
     CGFloat startPointX = self.bounds.origin.x + self.circlesRadius + HorizontalInsets;
     CGFloat intervalSize = (self.bounds.size.width - (self.circlesRadius + HorizontalInsets) * 2.0) / (self.values.count - 1);
     
-    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height - self.circlesRadius - BottomOffset;
+    CGFloat yPos = self.bounds.origin.y + self.bounds.size.height + 5 - self.circlesRadiusForSelected - BottomOffset * 2;
     
     for (int i = 0; i < self.values.count; i++) {
         UIColor *textColor = self.selectedItemIndex == i ? self.selectedLabelColor : self.labelColor;
@@ -199,7 +201,7 @@ static CGFloat const BottomOffset = 15.0f;
 {
     NSMutableParagraphStyle* textStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     textStyle.alignment = NSTextAlignmentCenter;
-    [label drawInRect:CGRectMake(point.x - 30, point.y - 10, 60, 20)
+    [label drawInRect:CGRectMake(point.x - 40, point.y - 10, 70, 60)
        withAttributes:@{
                         NSFontAttributeName: self.labelsFont,
                         NSForegroundColorAttributeName: color,
@@ -291,6 +293,42 @@ static CGFloat const BottomOffset = 15.0f;
 - (NSObject *)currentValue
 {
     return [self.values objectAtIndex:self.selectedItemIndex];
+}
+
+#pragma mark - UIAccessibility
+
+- (BOOL)isAccessibilityElement
+{
+    return YES;
+}
+
+- (NSString *)accessibilityLabel
+{
+    if (_selectedItemIndex < self.labels.count) {
+        return self.labels[_selectedItemIndex];
+    }
+    else {
+        return nil;
+    }
+}
+
+- (UIAccessibilityTraits)accessibilityTraits
+{
+    return UIAccessibilityTraitSelected | UIAccessibilityTraitAdjustable | UIAccessibilityTraitSummaryElement;
+}
+
+- (void)accessibilityIncrement
+{
+    if (_selectedItemIndex < self.labels.count - 1) {
+        [self setSelectedItemIndex:_selectedItemIndex+1 animated:YES];
+    }
+}
+
+- (void)accessibilityDecrement
+{
+    if (_selectedItemIndex > 0) {
+        [self setSelectedItemIndex:_selectedItemIndex-1 animated:YES];
+    }
 }
 
 @end
