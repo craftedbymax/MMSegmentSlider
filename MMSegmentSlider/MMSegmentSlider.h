@@ -33,6 +33,11 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat circlesRadius;
 
 /**
+ * Circles radius for the selected item.
+ */
+@property (nonatomic) IBInspectable CGFloat circlesRadiusForSelected;
+
+/**
  * Text offset from the circle
  */
 @property (nonatomic) IBInspectable CGFloat textOffset;
@@ -51,7 +56,6 @@ IB_DESIGNABLE
  * Contains NSString labels
  */
 @property (nonatomic, strong) NSArray *labels;
-
 
 /**
  * Set/get current selected value
